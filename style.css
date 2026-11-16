@@ -637,26 +637,41 @@ body[data-edition="chronos"][data-paper="light"] .preview-pane {
 .overlay-top-status {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: #fff;
-  padding: 4px 8px;
+  padding: 2px 4px;
+  letter-spacing: 0.02em;
+}
+
+.status-signal {
+  font-size: 0.6rem;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+.status-battery {
+  font-size: 0.75rem;
+  font-weight: 600;
 }
 
 .overlay-clock-area {
-  margin-top: 10px;
+  margin-top: 6px;
   text-align: center;
 }
 
 .overlay-date {
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 0.95rem;
+  font-weight: 400;
   color: #e2e8f0;
+  margin-top: 2px;
+  letter-spacing: 0.01em;
 }
 
 .overlay-time {
-  font-size: 3.4rem;
+  font-size: 3.6rem;
   font-weight: 700;
   letter-spacing: -2px;
   line-height: 1;
