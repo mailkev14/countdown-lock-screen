@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1179 2556" width="1179" height="2556">
+  <defs>
+    <linearGradient id="g_bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0813"/>
+      <stop offset="30%" stop-color="#180e2b"/>
+      <stop offset="65%" stop-color="#24123a"/>
+      <stop offset="100%" stop-color="#0a0614"/>
+    </linearGradient>
+
+    <radialGradient id="g_topGlow" cx="50%" cy="15%" r="45%">
+      <stop offset="0%" stop-color="#c084fc" stop-opacity="0.18"/>
+      <stop offset="50%" stop-color="#7e22ce" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#0a0614" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="g_centerGlow" cx="50%" cy="55%" r="45%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#b45309" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#0a0614" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="g_cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.02"/>
+    </linearGradient>
+
+    <linearGradient id="g_cardBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05"/>
+    </linearGradient>
+
+    <linearGradient id="g_accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="50%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+
+    <filter id="g_cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <style>
+    .font-sans { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif; }
+    .font-mono { font-family: "SF Mono", "Roboto Mono", Menlo, monospace; }
+  </style>
+
+  <!-- Background -->
+  <rect width="1179" height="2556" fill="url(#g_bgGrad)"/>
+  <rect width="1179" height="2556" fill="url(#g_topGlow)"/>
+  <rect width="1179" height="2556" fill="url(#g_centerGlow)"/>
+
+  <!-- Stars -->
+  <g opacity="0.15" fill="#fff">
+    <circle cx="180" cy="350" r="2"/>
+    <circle cx="950" cy="400" r="2"/>
+    <circle cx="1020" cy="800" r="1.5"/>
+    <circle cx="120" cy="1200" r="2.5"/>
+    <circle cx="1050" cy="1700" r="2"/>
+  </g>
+
+  <!-- HERO COUNTDOWN HUD (y: 640 to 1060) -->
+  <g transform="translate(75, 640)" filter="url(#g_cardShadow)">
+    <rect width="1029" height="400" rx="36" fill="url(#g_cardGrad)" stroke="url(#g_cardBorder)" stroke-width="1.5"/>
+
+    <rect x="44" y="40" width="230" height="42" rx="21" fill="#ec4899" fill-opacity="0.15" stroke="#ec4899" stroke-opacity="0.3"/>
+    <circle cx="64" cy="61" r="5" fill="#ec4899"/>
+    <text x="80" y="67" class="font-sans" font-size="20" font-weight="600" fill="#f472b6" letter-spacing="1.5">ACADEMIC SUMMIT</text>
+
+    <text x="985" y="68" class="font-mono" font-size="22" font-weight="500" fill="#cbd5e1" text-anchor="end">DEC 18, 2026</text>
+
+    <text x="44" y="132" class="font-sans" font-size="44" font-weight="700" fill="#f8fafc" letter-spacing="-0.5">Capstone &amp; Degree Conferred</text>
+    <text x="44" y="168" class="font-sans" font-size="23" font-weight="400" fill="#cbd5e1">Finals Mastery &amp; Oral Thesis Defense</text>
+
+    <!-- Countdown Digits -->
+    <g transform="translate(44, 210)">
+      <g>
+        <rect width="180" height="96" rx="20" fill="#1e1135" fill-opacity="0.8" stroke="#f59e0b" stroke-opacity="0.4"/>
+        <text x="90" y="66" class="font-mono" font-size="52" font-weight="800" fill="#ffffff" text-anchor="middle">32</text>
+        <text x="90" y="125" class="font-sans" font-size="18" font-weight="600" fill="#94a3b8" text-anchor="middle" letter-spacing="2">DAYS</text>
+      </g>
+      <g transform="translate(202, 0)">
+        <rect width="180" height="96" rx="20" fill="#1e1135" fill-opacity="0.8" stroke="#ffffff" stroke-opacity="0.08"/>
+        <text x="90" y="66" class="font-mono" font-size="52" font-weight="800" fill="#e2e8f0" text-anchor="middle">08</text>
+        <text x="90" y="125" class="font-sans" font-size="18" font-weight="600" fill="#94a3b8" text-anchor="middle" letter-spacing="2">HOURS</text>
+      </g>
+      <g transform="translate(404, 0)">
+        <rect width="180" height="96" rx="20" fill="#1e1135" fill-opacity="0.8" stroke="#ffffff" stroke-opacity="0.08"/>
+        <text x="90" y="66" class="font-mono" font-size="52" font-weight="800" fill="#cbd5e1" text-anchor="middle">45</text>
+        <text x="90" y="125" class="font-sans" font-size="18" font-weight="600" fill="#94a3b8" text-anchor="middle" letter-spacing="2">MINS</text>
+      </g>
+      <g transform="translate(775, 48)">
+        <circle cx="0" cy="0" r="54" fill="none" stroke="#2e1a47" stroke-width="12"/>
+        <circle cx="0" cy="0" r="54" fill="none" stroke="url(#g_accentGrad)" stroke-width="12" stroke-linecap="round" stroke-dasharray="142 339" transform="rotate(-90)"/>
+        <text x="0" y="8" class="font-mono" font-size="28" font-weight="800" fill="#fbbf24" text-anchor="middle">42%</text>
+        <text x="0" y="80" class="font-sans" font-size="16" font-weight="600" fill="#94a3b8" text-anchor="middle" letter-spacing="1.5">SUMMIT</text>
+      </g>
+    </g>
+
+    <rect x="0" y="394" width="430" height="6" rx="3" fill="url(#g_accentGrad)"/>
+  </g>
+
+  <!-- MILESTONES (y: 1100 to 2160) -->
+  <g transform="translate(75, 1100)">
+    <text x="12" y="32" class="font-sans" font-size="24" font-weight="700" fill="#f8fafc" letter-spacing="2">ACADEMIC ROADMAP</text>
+    <text x="1017" y="32" class="font-mono" font-size="20" font-weight="500" fill="#f59e0b" text-anchor="end">MILESTONE 2 OF 5 ACTIVE</text>
+
+    <line x1="68" y1="90" x2="68" y2="920" stroke="#2e1a47" stroke-width="4"/>
+    <line x1="68" y1="90" x2="68" y2="340" stroke="#f59e0b" stroke-width="4"/>
+
+    <!-- M1: Done -->
+    <g transform="translate(0, 70)">
+      <rect x="128" y="0" width="901" height="150" rx="26" fill="url(#g_cardGrad)" stroke="#10b981" stroke-opacity="0.3" stroke-width="1.2"/>
+      <circle cx="68" cy="75" r="26" fill="#064e3b" stroke="#10b981" stroke-width="3"/>
+      <path d="M59 75 L66 82 L78 68" fill="none" stroke="#34d399" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="164" y="52" class="font-mono" font-size="20" font-weight="700" fill="#34d399" letter-spacing="1">M-45 • COMPLETED</text>
+      <text x="990" y="52" class="font-mono" font-size="19" font-weight="500" fill="#64748b" text-anchor="end">NOV 03</text>
+      <text x="164" y="94" class="font-sans" font-size="29" font-weight="700" fill="#f1f5f9">Final Research &amp; Dataset Freeze</text>
+      <text x="164" y="126" class="font-sans" font-size="21" font-weight="400" fill="#94a3b8">Experimental runs validated, statistical analysis compiled</text>
+    </g>
+
+    <!-- M2: Active -->
+    <g transform="translate(0, 250)">
+      <rect x="128" y="0" width="901" height="168" rx="26" fill="#1b122e" fill-opacity="0.95" stroke="#f59e0b" stroke-width="2.5"/>
+      <circle cx="68" cy="84" r="30" fill="#78350f" stroke="#f59e0b" stroke-width="4"/>
+      <circle cx="68" cy="84" r="10" fill="#ffffff"/>
+      <rect x="164" y="26" width="168" height="34" rx="17" fill="#d97706" fill-opacity="0.25"/>
+      <text x="248" y="49" class="font-mono" font-size="18" font-weight="700" fill="#fbbf24" text-anchor="middle" letter-spacing="1.5">▶ ACTIVE NOW</text>
+      <text x="990" y="52" class="font-mono" font-size="20" font-weight="600" fill="#fbbf24" text-anchor="end">NOV 24 (8D LEFT)</text>
+      <text x="164" y="104" class="font-sans" font-size="31" font-weight="800" fill="#ffffff">Manuscript Draft 1 to Committee</text>
+      <text x="164" y="140" class="font-sans" font-size="22" font-weight="400" fill="#cbd5e1">Complete 45-page writeup with methodology, figures &amp; citations</text>
+    </g>
+
+    <!-- M3: Upcoming -->
+    <g transform="translate(0, 448)">
+      <rect x="128" y="0" width="901" height="150" rx="26" fill="url(#g_cardGrad)" stroke="url(#g_cardBorder)" stroke-width="1.2"/>
+      <circle cx="68" cy="75" r="22" fill="#130b21" stroke="#475569" stroke-width="3"/>
+      <circle cx="68" cy="75" r="6" fill="#64748b"/>
+      <text x="164" y="52" class="font-mono" font-size="20" font-weight="600" fill="#64748b" letter-spacing="1">M-18 • UPCOMING</text>
+      <text x="990" y="52" class="font-mono" font-size="19" font-weight="500" fill="#64748b" text-anchor="end">DEC 01</text>
+      <text x="164" y="94" class="font-sans" font-size="29" font-weight="600" fill="#cbd5e1">Advisor Revisions &amp; Final Edits</text>
+      <text x="164" y="126" class="font-sans" font-size="21" font-weight="400" fill="#64748b">Integrate faculty feedback, format according to university rubric</text>
+    </g>
+
+    <!-- M4: Upcoming -->
+    <g transform="translate(0, 628)">
+      <rect x="128" y="0" width="901" height="150" rx="26" fill="url(#g_cardGrad)" stroke="url(#g_cardBorder)" stroke-width="1.2"/>
+      <circle cx="68" cy="75" r="22" fill="#130b21" stroke="#475569" stroke-width="3"/>
+      <circle cx="68" cy="75" r="6" fill="#64748b"/>
+      <text x="164" y="52" class="font-mono" font-size="20" font-weight="600" fill="#64748b" letter-spacing="1">M-06 • UPCOMING</text>
+      <text x="990" y="52" class="font-mono" font-size="19" font-weight="500" fill="#64748b" text-anchor="end">DEC 12</text>
+      <text x="164" y="94" class="font-sans" font-size="29" font-weight="600" fill="#cbd5e1">Slide Deck &amp; 3x Rehearsals</text>
+      <text x="164" y="126" class="font-sans" font-size="21" font-weight="400" fill="#64748b">20-minute timed presentation with anticipated Q&amp;A defense slides</text>
+    </g>
+
+    <!-- M5: Victory -->
+    <g transform="translate(0, 808)">
+      <rect x="128" y="0" width="901" height="150" rx="26" fill="url(#g_cardGrad)" stroke="#ec4899" stroke-opacity="0.4" stroke-width="1.5"/>
+      <circle cx="68" cy="75" r="26" fill="#831843" stroke="#ec4899" stroke-width="3.5"/>
+      <polygon points="68,60 72,70 82,71 74,78 77,88 68,82 59,88 62,78 54,71 64,70" fill="#f472b6"/>
+      <text x="164" y="52" class="font-mono" font-size="20" font-weight="700" fill="#f472b6" letter-spacing="1">M-00 • GRADUATION</text>
+      <text x="990" y="52" class="font-mono" font-size="19" font-weight="600" fill="#f472b6" text-anchor="end">DEC 18</text>
+      <text x="164" y="94" class="font-sans" font-size="29" font-weight="700" fill="#f8fafc">Defense Mastered &amp; Commencement</text>
+      <text x="164" y="126" class="font-sans" font-size="21" font-weight="400" fill="#cbd5e1">Degree awarded, gown donned, celebratory dinner with family!</text>
+    </g>
+  </g>
+
+  <g transform="translate(589, 2220)">
+    <text x="0" y="0" class="font-sans" font-size="22" font-style="italic" font-weight="400" fill="#cbd5e1" text-anchor="middle">“Every great achievement is just a sequence of small, completed milestones.”</text>
+    <text x="0" y="32" class="font-mono" font-size="17" font-weight="500" fill="#6b7280" text-anchor="middle" letter-spacing="2">GOOGLE AI SKILLS STUDIO × HANDSHAKE CHALLENGE</text>
+  </g>
+</svg>

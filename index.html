@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown Lock Screen Studio • Horizon &amp; Chronos Editions</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="assets/cover_showcase.svg">
+</head>
+<body data-edition="horizon">
+
+  <!-- ========================================== -->
+  <!-- NAVBAR WITH EDITION SELECTOR               -->
+  <!-- ========================================== -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <div class="brand-logo" id="brandLogo">H</div>
+      <div class="brand-text">
+        <h1 id="brandTitle">HORIZON</h1>
+        <span id="brandSubtitle">Countdown Lock Screen Studio</span>
+      </div>
+    </div>
+
+    <!-- MAIN EDITION SWITCHER -->
+    <div class="edition-switcher">
+      <button class="edition-btn active" id="btnEditionHorizon" data-edition="horizon">
+        <span class="edition-dot dot-cyan"></span>
+        <span>Version 1: Horizon (Glassmorphism HUD)</span>
+      </button>
+      <button class="edition-btn" id="btnEditionChronos" data-edition="chronos">
+        <span class="edition-dot dot-amber"></span>
+        <span>Version 2: Chronos (Swiss Editorial)</span>
+      </button>
+    </div>
+
+    <div class="nav-badges">
+      <div class="badge badge-google">
+        Google AI Skills Studio
+      </div>
+      <div class="badge badge-handshake">
+        Handshake November Challenge
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========================================== -->
+  <!-- WORKSPACE CONTAINER                        -->
+  <!-- ========================================== -->
+  <div class="app-container">
+
+    <!-- SIDEBAR CONTROLS -->
+    <aside class="sidebar">
+
+      <!-- 1. PRESET SELECTOR (DYNAMIC PER EDITION) -->
+      <div id="sectionPresets">
+        <div class="section-title">
+          <span id="presetHeaderTitle">Curated Mission Presets</span>
+          <span class="tag-accent" id="presetHeaderTag">GEMINI BACKWARD-MAPPED</span>
+        </div>
+
+        <!-- Horizon Presets -->
+        <div class="preset-grid" id="horizonPresets">
+          <button class="preset-btn active" data-preset="career">
+            <div class="preset-info">
+              <strong>Career Offer Sprint</strong>
+              <span>30-Day tech job offer roadmap</span>
+            </div>
+            <span class="preset-tag">21D LEFT</span>
+          </button>
+          <button class="preset-btn" data-preset="hackathon">
+            <div class="preset-info">
+              <strong>Project Genesis: Ship Day</strong>
+              <span>Autonomous AI agent demo day</span>
+            </div>
+            <span class="preset-tag">07D LEFT</span>
+          </button>
+          <button class="preset-btn" data-preset="capstone">
+            <div class="preset-info">
+              <strong>Capstone &amp; Degree</strong>
+              <span>Thesis defense &amp; graduation</span>
+            </div>
+            <span class="preset-tag">32D LEFT</span>
+          </button>
+        </div>
+
+        <!-- Chronos Presets -->
+        <div class="preset-grid" id="chronosPresets" style="display: none;">
+          <button class="preset-btn active" data-preset="thesis">
+            <div class="preset-info">
+              <strong style="font-family: Georgia, serif;">Thesis Defense &amp; Degree</strong>
+              <span>45-day capstone manuscript to commencement</span>
+            </div>
+            <span class="preset-tag">32D LEFT</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 2. DEVICE & SYSTEM SIMULATION -->
+      <div class="control-group">
+        <div class="section-title">Device &amp; Safe-Zone Preview</div>
+        <div class="tab-row">
+          <button class="tab-btn active" id="tabPhone">📱 Phone (9:19.5)</button>
+          <button class="tab-btn" id="tabDesktop">💻 Laptop (16:10)</button>
+        </div>
+
+        <div style="margin-top: 14px;">
+          <div class="toggle-row">
+            <span>Simulate Lock Screen Clock</span>
+            <label class="switch">
+              <input type="checkbox" id="toggleOverlay" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="toggle-row">
+            <span>Show Safe-Zone Guides</span>
+            <label class="switch">
+              <input type="checkbox" id="toggleSafeZone">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. CUSTOMIZE DEADLINE & PALETTES -->
+      <div class="control-group">
+        <div class="section-title">Customize Deadline</div>
+
+        <div class="form-field">
+          <label>Deadline Goal Title</label>
+          <input type="text" id="inputTitle" value="Dream Tech Offer Signed">
+        </div>
+
+        <div class="form-field">
+          <label>Category Label</label>
+          <input type="text" id="inputCategory" value="HANDSHAKE SPRINT">
+        </div>
+
+        <div class="form-field">
+          <label>Target Deadline Date</label>
+          <input type="date" id="inputTargetDate">
+        </div>
+
+        <div class="form-field">
+          <label>Motivational Motto / Mantra</label>
+          <textarea id="inputQuote" rows="2">“Focus only on the milestone in front of you. The deadline takes care of itself.”</textarea>
+        </div>
+
+        <!-- Horizon Palette selector -->
+        <div class="form-field" id="horizonPaletteGroup">
+          <label>Color Theme</label>
+          <div class="palette-row">
+            <div class="palette-dot active" data-palette="cyan" style="background: linear-gradient(135deg, #38bdf8, #0369a1);" title="Deep Space Cyan"></div>
+            <div class="palette-dot" data-palette="amber" style="background: linear-gradient(135deg, #f59e0b, #ec4899);" title="Sunset Amber"></div>
+            <div class="palette-dot" data-palette="emerald" style="background: linear-gradient(135deg, #00f2fe, #10b981);" title="Emerald Cyber"></div>
+            <div class="palette-dot" data-palette="purple" style="background: linear-gradient(135deg, #a855f7, #6366f1);" title="Violet Aurora"></div>
+          </div>
+        </div>
+
+        <!-- Chronos Theme selector (Dark Obsidian vs Light Ivory) -->
+        <div class="form-field" id="chronosThemeGroup" style="display: none;">
+          <label>Editorial Paper Style</label>
+          <div class="tab-row" style="margin-top: 6px;">
+            <button class="tab-btn active" id="btnPaperDark">Dark Obsidian</button>
+            <button class="tab-btn" id="btnPaperLight">Light Ivory</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. ACTIVE MILESTONES ROADMAP -->
+      <div class="control-group">
+        <div class="section-title">
+          <span>Active Milestones</span>
+          <span style="font-size: 0.7rem; color: var(--accent-emerald);">CHRONOLOGICAL</span>
+        </div>
+        <div class="milestones-list" id="milestonesContainer">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- 5. EXPORT & DOWNLOAD ACTIONS -->
+      <div>
+        <button class="btn-primary" id="btnDownloadPNG">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          Download Lock Screen Wallpaper (PNG)
+        </button>
+
+        <button class="btn-secondary" id="btnDownloadSVG">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
+          Download Vector Wallpaper (SVG)
+        </button>
+
+        <button class="btn-secondary" id="btnDownloadICS">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          Download Calendar Reminders (.ics)
+        </button>
+
+        <button class="btn-secondary" id="btnCoverMockup">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
+          </svg>
+          Download Submission Cover Graphic
+        </button>
+
+        <button class="btn-secondary" id="btnCopySubmission" style="border-color: rgba(56, 189, 248, 0.4); color: var(--accent-cyan);">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          View Contest Submission Package (Both Versions)
+        </button>
+      </div>
+
+    </aside>
+
+    <!-- PREVIEW PANE -->
+    <main class="preview-pane">
+
+      <!-- TOOLBAR -->
+      <div class="preview-toolbar">
+        <span id="toolbarEditionLabel">Version 1: Horizon Edition</span>
+        <span>•</span>
+        <span id="canvasResLabel">1179 × 2556 Native Retina</span>
+        <span>•</span>
+        <span style="color: var(--accent-emerald);">● Live Real-Time Ticking HUD</span>
+      </div>
+
+      <!-- DEVICE STAGE -->
+      <div class="device-stage">
+
+        <!-- PHONE FRAME MOCKUP -->
+        <div class="phone-mockup" id="phoneFrame">
+          <div class="dynamic-island">
+            <div class="island-camera"></div>
+          </div>
+
+          <!-- SIMULATED SYSTEM OVERLAY -->
+          <div class="system-overlay" id="systemOverlay">
+            <div class="overlay-top-status">
+              <span id="statusClock">09:41</span>
+              <span>5G 􀛨 100%</span>
+            </div>
+
+            <div class="overlay-clock-area">
+              <div class="overlay-date" id="overlayDate">Monday, November 16</div>
+              <div class="overlay-time" id="overlayTime">09:41</div>
+            </div>
+
+            <div class="overlay-bottom-controls">
+              <div class="control-circle">🔦</div>
+              <div class="control-circle">📷</div>
+            </div>
+
+            <div class="home-bar"></div>
+          </div>
+
+          <!-- SAFE ZONE GUIDES -->
+          <div class="safe-zone-guide" id="safeZoneGuide" style="display: none;">
+            <div class="safe-zone-label">TOP CLOCK SAFE ZONE (KEEP CLEAR)</div>
+          </div>
+
+          <!-- CANVAS DRAWING -->
+          <canvas class="wallpaper-canvas" id="wallpaperCanvas" width="1179" height="2556"></canvas>
+        </div>
+
+        <!-- DESKTOP FRAME MOCKUP -->
+        <div class="desktop-mockup" id="desktopFrame" style="display: none;">
+          <canvas class="wallpaper-canvas" id="desktopWallpaperCanvas" width="2880" height="1800"></canvas>
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- ========================================== -->
+  <!-- SUBMISSION COPY MODAL                      -->
+  <!-- ========================================== -->
+  <div class="modal-overlay" id="submissionModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Handshake Contest Submission Package</h2>
+        <button class="close-btn" id="closeModal">&times;</button>
+      </div>
+      <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 16px;">
+        The contest allows multiple entries per participant! You can submit either or both of these packages directly into the Handshake AI Skills Studio mission before <strong>November 23, 2026</strong>.
+      </p>
+
+      <!-- MODAL TABS -->
+      <div class="tab-row" style="margin-bottom: 16px;">
+        <button class="tab-btn active" id="modalTabV1">Submission 1: Horizon (Career Sprint)</button>
+        <button class="tab-btn" id="modalTabV2">Submission 2: Chronos (Editorial Capstone)</button>
+      </div>
+
+      <!-- TAB 1 CONTENT -->
+      <div id="modalContentV1">
+        <div class="section-title">a. Project Title</div>
+        <div class="submission-box">HORIZON: Reverse-Engineered Countdown Lock Screen &amp; Milestone Engine</div>
+
+        <div class="section-title">b. Project Cover Image</div>
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 8px;">
+          Use <code>assets/cover_horizon.svg</code> (or <code>assets/cover_showcase.svg</code>)
+        </p>
+
+        <div class="section-title">c. Project Description</div>
+        <div class="submission-box">Project Name: HORIZON — Reverse-Engineered Countdown Lock Screen
+Mission: Handshake AI Skills Studio × Google "Your Deadline, Your Design"
+Target Focus: 30-Day Tech Career Offer &amp; Capstone Sprint
+
+1. The Problem &amp; The Core Concept:
+Traditional countdown timers display dwindling hours, which often induces anxiety rather than focused action. Built using Google Gemini's reverse-engineering methodology, Horizon flips passive countdowns into an active, glanceable Heads-Up Display (HUD) for mobile and desktop lock screens.
+
+2. Gemini Reverse-Engineered Milestone Architecture:
+Instead of fixating solely on the final December deadline, we used Google Gemini to work backward and decompose the 30-day journey into five sequential, actionable milestones:
+- M-30 [Completed]: Handshake Profile &amp; ATS Resume Overhaul
+- M-21 [Active Focus]: 20 Tailored Applications &amp; Portfolio V1 Shipped
+- M-14 [Upcoming]: Technical Coding &amp; Behavioral STAR Mock Interviews
+- M-07 [Upcoming]: Final Round Onsite Interviews &amp; Executive Panels
+- M-00 [Victory Goal]: Offer Letter Negotiated, Accepted &amp; Celebrated
+
+3. Device Safe-Zone Engineering:
+Calibrated for phone (9:19.5, 1179x2556) and laptop (16:10, 2880x1800). The top 24% features clean dark space for system clock, date, and notifications. Center cards feature exact countdown digits, radial pacing ring, and active milestone focus.
+
+4. Daily Accountability:
+Every phone unlock reinforces the active milestone. Includes a one-click .ics calendar export to automatically schedule Google Calendar alerts for each career milestone.</div>
+
+        <div class="section-title">d. Project Link / URL</div>
+        <div class="submission-box">https://&lt;your-username&gt;.github.io/countdown-lock-screen/</div>
+      </div>
+
+      <!-- TAB 2 CONTENT -->
+      <div id="modalContentV2" style="display: none;">
+        <div class="section-title">a. Project Title</div>
+        <div class="submission-box">CHRONOS: Minimalist Swiss Editorial Lock Screen &amp; Capstone Engine</div>
+
+        <div class="section-title">b. Project Cover Image</div>
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 8px;">
+          Use <code>assets/cover_chronos.svg</code> (or <code>assets/cover_showcase.svg</code>)
+        </p>
+
+        <div class="section-title">c. Project Description</div>
+        <div class="submission-box">Project Name: CHRONOS — Minimalist Editorial Countdown Lock Screen
+Mission: Handshake AI Skills Studio × Google "Your Deadline, Your Design"
+Target Focus: Senior Thesis Defense &amp; Academic Capstone Mastery
+
+1. Design Ethos &amp; Problem:
+Standard digital countdown displays frequently induce anxiety through blinking numbers and unstructured urgency. Chronos applies International Typographic Style (Swiss Editorial Design) to bring calm, high-legibility focus to major academic summits (thesis defense, capstone, finals).
+
+2. Gemini Reverse-Engineered Milestones:
+Working backward from the December 18 commencement date, Google Gemini structured a 5-phase progressive sprint indexed with Roman numerals:
+- Phase I [Completed]: Research Scope &amp; Dataset Freeze
+- Phase II [Active Focus]: 40-Page Manuscript Draft to Committee
+- Phase III [Upcoming]: Faculty Revisions &amp; Formatting Rubric
+- Phase IV [Upcoming]: Defense Slide Deck &amp; 3x Timed Rehearsals
+- Phase V [Commencement]: Oral Defense Mastered &amp; Degree Conferred
+
+3. Dual Master Palettes &amp; Device Safe Zones:
+Chronos offers both Dark Obsidian (slate paper grain) and Light Ivory (classic print editorial parchment). Built specifically to protect the top 24% iOS/Android lock screen safe zone for system clocks and widgets.
+
+4. Everyday Subconscious Checkpoint:
+Every phone unlock reinforces the active milestone. Includes a one-click .ics calendar export to automatically schedule Google Calendar alerts for each academic milestone.</div>
+
+        <div class="section-title">d. Project Link / URL</div>
+        <div class="submission-box">https://&lt;your-username&gt;.github.io/countdown-lock-screen/</div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

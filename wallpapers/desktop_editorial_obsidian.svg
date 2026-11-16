@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2880 1800" width="2880" height="1800">
+  <defs>
+    <linearGradient id="ed_bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0c0d10"/>
+      <stop offset="50%" stop-color="#0f1115"/>
+      <stop offset="100%" stop-color="#090a0c"/>
+    </linearGradient>
+
+    <filter id="ed_paper" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" result="noise"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.03 0" in="noise" result="coloredNoise"/>
+      <feComposite in="SourceGraphic" in2="coloredNoise" operator="over"/>
+    </filter>
+  </defs>
+
+  <style>
+    .serif { font-family: "Georgia", "Baskerville", "Times New Roman", "Playfair Display", serif; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif; }
+    .mono { font-family: "SF Mono", "Courier New", monospace; }
+  </style>
+
+  <!-- Background -->
+  <rect width="2880" height="1800" fill="url(#ed_bg)"/>
+  <rect width="2880" height="1800" fill="#ffffff" fill-opacity="0.015" filter="url(#ed_paper)"/>
+
+  <!-- Outer Margins Swiss Rules -->
+  <g stroke="#262930" stroke-width="1.5" opacity="0.6">
+    <line x1="80" y1="80" x2="2800" y2="80"/>
+    <line x1="80" y1="1720" x2="2800" y2="1720"/>
+    <line x1="80" y1="80" x2="80" y2="1720"/>
+    <line x1="2800" y1="80" x2="2800" y2="1720"/>
+  </g>
+
+  <!-- Running Header -->
+  <g transform="translate(140, 130)">
+    <text x="0" y="0" class="mono" font-size="18" font-weight="600" fill="#71717a" letter-spacing="3">ACADEMIC CAPSTONE EDITORIAL • VOL. XXIV</text>
+    <text x="2600" y="0" class="mono" font-size="18" font-weight="600" fill="#d97706" text-anchor="end" letter-spacing="2">HANDSHAKE AI SKILLS STUDIO × GOOGLE</text>
+  </g>
+
+  <!-- LEFT COLUMN: EDITORIAL COUNTDOWN HERO (x: 140, y: 220, w: 960) -->
+  <g transform="translate(140, 220)">
+    <line x1="0" y1="0" x2="960" y2="0" stroke="#3f3f46" stroke-width="2"/>
+
+    <text x="0" y="52" class="mono" font-size="20" font-weight="700" fill="#d97706" letter-spacing="3">PROJECT NO. 01 — THE FINAL ASCENT</text>
+    <text x="960" y="52" class="mono" font-size="20" font-weight="500" fill="#a1a1aa" text-anchor="end">DEC 18, 2026</text>
+
+    <!-- Main Title -->
+    <text x="0" y="140" class="serif" font-size="68" font-weight="400" fill="#f4f4f5" letter-spacing="-1">Thesis Defense &amp;</text>
+    <text x="0" y="210" class="serif" font-size="68" font-weight="400" fill="#f4f4f5" letter-spacing="-1">Commencement</text>
+    <text x="0" y="260" class="sans" font-size="24" font-weight="300" fill="#a1a1aa">Reverse-engineered 45-day capstone manuscript to graduation</text>
+
+    <!-- Large Typographic Countdown -->
+    <g transform="translate(0, 360)">
+      <g>
+        <text x="0" y="110" class="serif" font-size="140" font-weight="300" fill="#ffffff" letter-spacing="-4">32</text>
+        <text x="210" y="50" class="mono" font-size="22" font-weight="700" fill="#d97706" letter-spacing="2">DAYS LEFT</text>
+        <text x="210" y="85" class="sans" font-size="20" font-weight="400" fill="#71717a">UNTIL COMMENCEMENT</text>
+      </g>
+
+      <g transform="translate(0, 200)">
+        <text x="0" y="60" class="mono" font-size="34" font-weight="400" fill="#71717a">EXACT T-MINUS:</text>
+        <text x="320" y="60" class="mono" font-size="36" font-weight="700" fill="#e4e4e7">32D : 08H : 45M : 12S</text>
+      </g>
+    </g>
+
+    <!-- Swiss Progress Hairline Ruler -->
+    <g transform="translate(0, 680)">
+      <line x1="0" y1="0" x2="960" y2="0" stroke="#27272a" stroke-width="4"/>
+      <line x1="0" y1="0" x2="403" y2="0" stroke="#d97706" stroke-width="4"/>
+      <circle cx="403" cy="0" r="8" fill="#f59e0b" stroke="#0c0d10" stroke-width="2"/>
+      <text x="0" y="44" class="mono" font-size="20" font-weight="600" fill="#71717a">PACING: 42% ELAPSED</text>
+      <text x="960" y="44" class="mono" font-size="20" font-weight="700" fill="#d97706" text-anchor="end">MILESTONE II OF V ACTIVE</text>
+    </g>
+
+    <!-- Quote Box -->
+    <g transform="translate(0, 800)">
+      <rect x="0" y="0" width="960" height="200" fill="#14161a" stroke="#27272a" stroke-width="1"/>
+      <text x="44" y="65" class="serif" font-style="italic" font-size="26" font-weight="400" fill="#e4e4e7">“Nulla dies sine linea —</text>
+      <text x="44" y="105" class="serif" font-style="italic" font-size="26" font-weight="400" fill="#e4e4e7">No day without a line. Every milestone matters.”</text>
+      <text x="44" y="155" class="mono" font-size="18" font-weight="600" fill="#71717a" letter-spacing="1.5">GOOGLE AI SKILLS STUDIO × HANDSHAKE</text>
+    </g>
+  </g>
+
+  <!-- RIGHT COLUMN: MILESTONE INDEX (x: 1200, y: 220, w: 1540) -->
+  <g transform="translate(1200, 220)">
+    <line x1="0" y1="0" x2="1540" y2="0" stroke="#3f3f46" stroke-width="2"/>
+
+    <text x="0" y="52" class="mono" font-size="20" font-weight="700" fill="#f4f4f5" letter-spacing="2">REVERSE-ENGINEERED MILESTONE ROADMAP</text>
+    <text x="1540" y="52" class="mono" font-size="18" font-weight="500" fill="#71717a" text-anchor="end">CHRONOLOGICAL SPRINT</text>
+
+    <!-- I. Finished -->
+    <g transform="translate(0, 90)">
+      <rect x="0" y="0" width="1540" height="180" fill="#14161a" stroke="#27272a" stroke-width="1"/>
+      <text x="48" y="68" class="serif" font-size="44" font-weight="400" fill="#10b981">I.</text>
+      <text x="120" y="58" class="mono" font-size="18" font-weight="700" fill="#10b981" letter-spacing="1.5">M-45 • COMPLETED</text>
+      <text x="1480" y="58" class="mono" font-size="18" font-weight="500" fill="#71717a" text-anchor="end">NOV 03</text>
+      <text x="120" y="106" class="serif" font-size="34" font-weight="400" fill="#f4f4f5">Research Scope &amp; Dataset Freeze</text>
+      <text x="120" y="144" class="sans" font-size="22" font-weight="400" fill="#71717a">Experimental runs validated, baseline models established, empirical data archived</text>
+    </g>
+
+    <!-- II. Active -->
+    <g transform="translate(0, 300)">
+      <rect x="0" y="0" width="1540" height="205" fill="#1c1914" stroke="#d97706" stroke-width="2"/>
+      <text x="48" y="74" class="serif" font-size="50" font-weight="400" fill="#f59e0b">II.</text>
+      <text x="120" y="60" class="mono" font-size="18" font-weight="800" fill="#f59e0b" letter-spacing="1.5">M-28 • CURRENT FOCUS</text>
+      <text x="1480" y="60" class="mono" font-size="20" font-weight="700" fill="#f59e0b" text-anchor="end">NOV 24 (8 DAYS LEFT)</text>
+      <text x="120" y="116" class="serif" font-size="38" font-weight="600" fill="#ffffff">Manuscript Draft Delivered to Committee</text>
+      <text x="120" y="160" class="sans" font-size="24" font-weight="400" fill="#e4e4e7">Complete 40-page manuscript with abstract, figures, methodology, results &amp; citations</text>
+    </g>
+
+    <!-- III. Upcoming -->
+    <g transform="translate(0, 535)">
+      <rect x="0" y="0" width="1540" height="180" fill="#121316" stroke="#27272a" stroke-width="1"/>
+      <text x="48" y="68" class="serif" font-size="44" font-weight="400" fill="#71717a">III.</text>
+      <text x="120" y="58" class="mono" font-size="18" font-weight="600" fill="#71717a" letter-spacing="1.5">M-18 • UPCOMING</text>
+      <text x="1480" y="58" class="mono" font-size="18" font-weight="500" fill="#71717a" text-anchor="end">DEC 01</text>
+      <text x="120" y="106" class="serif" font-size="34" font-weight="400" fill="#d4d4d8">Faculty Revisions &amp; Formatting Rubric</text>
+      <text x="120" y="144" class="sans" font-size="22" font-weight="400" fill="#71717a">Integrate committee review feedback and re-compile for university academic archive</text>
+    </g>
+
+    <!-- IV. Upcoming -->
+    <g transform="translate(0, 745)">
+      <rect x="0" y="0" width="1540" height="180" fill="#121316" stroke="#27272a" stroke-width="1"/>
+      <text x="48" y="68" class="serif" font-size="44" font-weight="400" fill="#71717a">IV.</text>
+      <text x="120" y="58" class="mono" font-size="18" font-weight="600" fill="#71717a" letter-spacing="1.5">M-06 • UPCOMING</text>
+      <text x="1480" y="58" class="mono" font-size="18" font-weight="500" fill="#71717a" text-anchor="end">DEC 12</text>
+      <text x="120" y="106" class="serif" font-size="34" font-weight="400" fill="#d4d4d8">Defense Slide Deck &amp; 3x Timed Rehearsals</text>
+      <text x="120" y="144" class="sans" font-size="22" font-weight="400" fill="#71717a">20-minute timed presentation with anticipated Q&amp;A defense slides for committee questioning</text>
+    </g>
+
+    <!-- V. Victory -->
+    <g transform="translate(0, 955)">
+      <rect x="0" y="0" width="1540" height="180" fill="#1a1612" stroke="#d97706" stroke-opacity="0.4" stroke-width="1.5"/>
+      <text x="48" y="68" class="serif" font-size="44" font-weight="400" fill="#f59e0b">V.</text>
+      <text x="120" y="58" class="mono" font-size="18" font-weight="700" fill="#f59e0b" letter-spacing="1.5">M-00 • COMMENCEMENT</text>
+      <text x="1480" y="58" class="mono" font-size="18" font-weight="700" fill="#f59e0b" text-anchor="end">DEC 18</text>
+      <text x="120" y="106" class="serif" font-size="34" font-weight="600" fill="#ffffff">Oral Defense Mastered &amp; Degree Conferred</text>
+      <text x="120" y="144" class="sans" font-size="22" font-weight="400" fill="#a1a1aa">Committee signatures locked, degree conferred, celebration dinner with family and mentors!</text>
+    </g>
+  </g>
+</svg>
