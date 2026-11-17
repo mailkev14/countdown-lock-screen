@@ -416,8 +416,8 @@ function renderHorizonEdition(c, W, H, isPhone, cd) {
   });
 
   if (isPhone) {
-    // Phone HUD — y:470 leaves ~26px gap below clock, still comfortable
-    const hudX = 75, hudY = 470, hudW = 1029, hudH = 420;
+    // Phone HUD — starts at y:560 (clears the overlay clock with comfortable iOS breathing room)
+    const hudX = 75, hudY = 560, hudW = 1029, hudH = 410;
     drawRoundedRect(c, hudX, hudY, hudW, hudH, 36, "rgba(255, 255, 255, 0.05)", "rgba(255, 255, 255, 0.15)", 2);
 
     drawRoundedRect(c, hudX + 44, hudY + 40, 220, 42, 21, pal.pillBg, pal.accent, 1.5);
@@ -489,7 +489,7 @@ function renderHorizonEdition(c, W, H, isPhone, cd) {
     c.fillText("PACING", ringX, ringY + 80);
 
     // Milestones
-    const timeX = 75, timeY = 960;
+    const timeX = 75, timeY = 1040;
     c.fillStyle = "#f8fafc";
     c.font = "700 24px -apple-system, sans-serif";
     c.textAlign = "left";
@@ -498,21 +498,21 @@ function renderHorizonEdition(c, W, H, isPhone, cd) {
     c.strokeStyle = "#1e293b";
     c.lineWidth = 4;
     c.beginPath();
-    c.moveTo(timeX + 68, timeY + 90);
-    c.lineTo(timeX + 68, timeY + 1090);
+    c.moveTo(timeX + 68, timeY + 85);
+    c.lineTo(timeX + 68, timeY + 920);
     c.stroke();
 
     activeConfig.milestones.forEach((m, idx) => {
-      const cardY = timeY + 70 + idx * 210;
+      const cardY = timeY + 65 + idx * 195;
       const isDone = (m.status === "completed");
       const isActive = (m.status === "active");
       const isVic = (m.status === "victory");
 
       const cardBg = isActive ? "rgba(15, 23, 42, 0.95)" : "rgba(255, 255, 255, 0.04)";
       const cardStroke = isActive ? pal.accent : isDone ? "#10b981" : isVic ? "#f59e0b" : "rgba(255, 255, 255, 0.1)";
-      drawRoundedRect(c, timeX + 128, cardY, 901, 170, 26, cardBg, cardStroke, isActive ? 2.5 : 1.2);
+      drawRoundedRect(c, timeX + 128, cardY, 901, 155, 26, cardBg, cardStroke, isActive ? 2.5 : 1.2);
 
-      const nodeX = timeX + 68, nodeY = cardY + 85;
+      const nodeX = timeX + 68, nodeY = cardY + 77;
       c.beginPath();
       c.arc(nodeX, nodeY, isActive ? 30 : 24, 0, Math.PI * 2);
       c.fillStyle = isDone ? "#064e3b" : isActive ? pal.accentDark : isVic ? "#451a03" : "#0b1120";
@@ -531,30 +531,30 @@ function renderHorizonEdition(c, W, H, isPhone, cd) {
       c.textAlign = "left";
       c.font = "700 20px 'SF Mono', monospace";
       c.fillStyle = isDone ? "#34d399" : isActive ? pal.accent : isVic ? "#fbbf24" : "#64748b";
-      c.fillText(`${m.label} • ${isDone ? "COMPLETED" : isActive ? "ACTIVE NOW" : isVic ? "VICTORY" : "UPCOMING"}`, timeX + 164, cardY + 56);
+      c.fillText(`${m.label} • ${isDone ? "COMPLETED" : isActive ? "ACTIVE NOW" : isVic ? "VICTORY" : "UPCOMING"}`, timeX + 164, cardY + 54);
 
       c.textAlign = "right";
       c.font = "500 19px 'SF Mono', monospace";
       c.fillStyle = isActive ? pal.accent : "#64748b";
-      c.fillText(m.date, timeX + 990, cardY + 56);
+      c.fillText(m.date, timeX + 990, cardY + 54);
 
       c.textAlign = "left";
       c.font = "700 29px -apple-system, sans-serif";
       c.fillStyle = isActive ? "#ffffff" : "#f1f5f9";
-      c.fillText(m.title, timeX + 164, cardY + 100);
+      c.fillText(m.title, timeX + 164, cardY + 96);
 
       c.font = "400 21px -apple-system, sans-serif";
       c.fillStyle = isActive ? "#cbd5e1" : "#94a3b8";
-      c.fillText(m.desc, timeX + 164, cardY + 136);
+      c.fillText(m.desc, timeX + 164, cardY + 128);
     });
 
     c.textAlign = "center";
     c.font = "italic 400 22px -apple-system, sans-serif";
     c.fillStyle = "#94a3b8";
-    c.fillText(activeConfig.quote, W / 2, 2160);
+    c.fillText(activeConfig.quote, W / 2, 2150);
     c.font = "500 17px 'SF Mono', monospace";
     c.fillStyle = "#475569";
-    c.fillText("BUILT WITH GOOGLE AI SKILLS STUDIO × HANDSHAKE", W / 2, 2200);
+    c.fillText("BUILT WITH GOOGLE AI SKILLS STUDIO × HANDSHAKE", W / 2, 2190);
 
   } else {
     // Desktop Horizon
@@ -658,7 +658,7 @@ function renderChronosEdition(c, W, H, isPhone, cd) {
     c.fillText("HANDSHAKE × GOOGLE", 1079, 130);
 
     // Hero Section
-    const hy = 470;
+    const hy = 560;
     c.beginPath();
     c.moveTo(100, hy);
     c.lineTo(1079, hy);
@@ -781,7 +781,7 @@ function renderChronosEdition(c, W, H, isPhone, cd) {
     c.textAlign = "center";
     c.font = "italic 400 22px Georgia, serif";
     c.fillStyle = colSubtext;
-    c.fillText(activeConfig.quote, W / 2, 2024);
+    c.fillText(activeConfig.quote, W / 2, 2150);
 
   } else {
     // Desktop Chronos
