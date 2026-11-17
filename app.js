@@ -416,8 +416,8 @@ function renderHorizonEdition(c, W, H, isPhone, cd) {
   });
 
   if (isPhone) {
-    // Phone HUD (y: 640 to 1060)
-    const hudX = 75, hudY = 640, hudW = 1029, hudH = 400;
+    // Phone HUD — starts at y:400 (≈128px on frame, snug below overlay clock)
+    const hudX = 75, hudY = 400, hudW = 1029, hudH = 400;
     drawRoundedRect(c, hudX, hudY, hudW, hudH, 36, "rgba(255, 255, 255, 0.05)", "rgba(255, 255, 255, 0.15)", 2);
 
     drawRoundedRect(c, hudX + 44, hudY + 40, 220, 42, 21, pal.pillBg, pal.accent, 1.5);
@@ -489,7 +489,7 @@ function renderHorizonEdition(c, W, H, isPhone, cd) {
     c.fillText("PACING", ringX, ringY + 80);
 
     // Milestones
-    const timeX = 75, timeY = 1100;
+    const timeX = 75, timeY = 860;
     c.fillStyle = "#f8fafc";
     c.font = "700 24px -apple-system, sans-serif";
     c.textAlign = "left";
@@ -551,10 +551,10 @@ function renderHorizonEdition(c, W, H, isPhone, cd) {
     c.textAlign = "center";
     c.font = "italic 400 22px -apple-system, sans-serif";
     c.fillStyle = "#94a3b8";
-    c.fillText(activeConfig.quote, W / 2, 2220);
+    c.fillText(activeConfig.quote, W / 2, 1980);
     c.font = "500 17px 'SF Mono', monospace";
     c.fillStyle = "#475569";
-    c.fillText("BUILT WITH GOOGLE AI SKILLS STUDIO × HANDSHAKE", W / 2, 2256);
+    c.fillText("BUILT WITH GOOGLE AI SKILLS STUDIO × HANDSHAKE", W / 2, 2016);
 
   } else {
     // Desktop Horizon
@@ -658,7 +658,7 @@ function renderChronosEdition(c, W, H, isPhone, cd) {
     c.fillText("HANDSHAKE × GOOGLE", 1079, 130);
 
     // Hero Section
-    const hy = 640;
+    const hy = 400;
     c.beginPath();
     c.moveTo(100, hy);
     c.lineTo(1079, hy);
@@ -781,7 +781,7 @@ function renderChronosEdition(c, W, H, isPhone, cd) {
     c.textAlign = "center";
     c.font = "italic 400 22px Georgia, serif";
     c.fillStyle = colSubtext;
-    c.fillText(activeConfig.quote, W / 2, 2264);
+    c.fillText(activeConfig.quote, W / 2, 2024);
 
   } else {
     // Desktop Chronos
