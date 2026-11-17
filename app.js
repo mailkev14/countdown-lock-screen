@@ -416,8 +416,8 @@ function renderHorizonEdition(c, W, H, isPhone, cd) {
   });
 
   if (isPhone) {
-    // Phone HUD — starts at y:400 (≈128px on frame, snug below overlay clock)
-    const hudX = 75, hudY = 400, hudW = 1029, hudH = 400;
+    // Phone HUD — y:470 leaves ~26px gap below clock, still comfortable
+    const hudX = 75, hudY = 470, hudW = 1029, hudH = 420;
     drawRoundedRect(c, hudX, hudY, hudW, hudH, 36, "rgba(255, 255, 255, 0.05)", "rgba(255, 255, 255, 0.15)", 2);
 
     drawRoundedRect(c, hudX + 44, hudY + 40, 220, 42, 21, pal.pillBg, pal.accent, 1.5);
@@ -489,7 +489,7 @@ function renderHorizonEdition(c, W, H, isPhone, cd) {
     c.fillText("PACING", ringX, ringY + 80);
 
     // Milestones
-    const timeX = 75, timeY = 860;
+    const timeX = 75, timeY = 960;
     c.fillStyle = "#f8fafc";
     c.font = "700 24px -apple-system, sans-serif";
     c.textAlign = "left";
@@ -499,20 +499,20 @@ function renderHorizonEdition(c, W, H, isPhone, cd) {
     c.lineWidth = 4;
     c.beginPath();
     c.moveTo(timeX + 68, timeY + 90);
-    c.lineTo(timeX + 68, timeY + 920);
+    c.lineTo(timeX + 68, timeY + 1090);
     c.stroke();
 
     activeConfig.milestones.forEach((m, idx) => {
-      const cardY = timeY + 70 + idx * 178;
+      const cardY = timeY + 70 + idx * 210;
       const isDone = (m.status === "completed");
       const isActive = (m.status === "active");
       const isVic = (m.status === "victory");
 
       const cardBg = isActive ? "rgba(15, 23, 42, 0.95)" : "rgba(255, 255, 255, 0.04)";
       const cardStroke = isActive ? pal.accent : isDone ? "#10b981" : isVic ? "#f59e0b" : "rgba(255, 255, 255, 0.1)";
-      drawRoundedRect(c, timeX + 128, cardY, 901, 150, 26, cardBg, cardStroke, isActive ? 2.5 : 1.2);
+      drawRoundedRect(c, timeX + 128, cardY, 901, 170, 26, cardBg, cardStroke, isActive ? 2.5 : 1.2);
 
-      const nodeX = timeX + 68, nodeY = cardY + 75;
+      const nodeX = timeX + 68, nodeY = cardY + 85;
       c.beginPath();
       c.arc(nodeX, nodeY, isActive ? 30 : 24, 0, Math.PI * 2);
       c.fillStyle = isDone ? "#064e3b" : isActive ? pal.accentDark : isVic ? "#451a03" : "#0b1120";
@@ -531,30 +531,30 @@ function renderHorizonEdition(c, W, H, isPhone, cd) {
       c.textAlign = "left";
       c.font = "700 20px 'SF Mono', monospace";
       c.fillStyle = isDone ? "#34d399" : isActive ? pal.accent : isVic ? "#fbbf24" : "#64748b";
-      c.fillText(`${m.label} • ${isDone ? "COMPLETED" : isActive ? "ACTIVE NOW" : isVic ? "VICTORY" : "UPCOMING"}`, timeX + 164, cardY + 52);
+      c.fillText(`${m.label} • ${isDone ? "COMPLETED" : isActive ? "ACTIVE NOW" : isVic ? "VICTORY" : "UPCOMING"}`, timeX + 164, cardY + 56);
 
       c.textAlign = "right";
       c.font = "500 19px 'SF Mono', monospace";
       c.fillStyle = isActive ? pal.accent : "#64748b";
-      c.fillText(m.date, timeX + 990, cardY + 52);
+      c.fillText(m.date, timeX + 990, cardY + 56);
 
       c.textAlign = "left";
       c.font = "700 29px -apple-system, sans-serif";
       c.fillStyle = isActive ? "#ffffff" : "#f1f5f9";
-      c.fillText(m.title, timeX + 164, cardY + 94);
+      c.fillText(m.title, timeX + 164, cardY + 100);
 
       c.font = "400 21px -apple-system, sans-serif";
       c.fillStyle = isActive ? "#cbd5e1" : "#94a3b8";
-      c.fillText(m.desc, timeX + 164, cardY + 126);
+      c.fillText(m.desc, timeX + 164, cardY + 136);
     });
 
     c.textAlign = "center";
     c.font = "italic 400 22px -apple-system, sans-serif";
     c.fillStyle = "#94a3b8";
-    c.fillText(activeConfig.quote, W / 2, 1980);
+    c.fillText(activeConfig.quote, W / 2, 2160);
     c.font = "500 17px 'SF Mono', monospace";
     c.fillStyle = "#475569";
-    c.fillText("BUILT WITH GOOGLE AI SKILLS STUDIO × HANDSHAKE", W / 2, 2016);
+    c.fillText("BUILT WITH GOOGLE AI SKILLS STUDIO × HANDSHAKE", W / 2, 2200);
 
   } else {
     // Desktop Horizon
@@ -658,7 +658,7 @@ function renderChronosEdition(c, W, H, isPhone, cd) {
     c.fillText("HANDSHAKE × GOOGLE", 1079, 130);
 
     // Hero Section
-    const hy = 400;
+    const hy = 470;
     c.beginPath();
     c.moveTo(100, hy);
     c.lineTo(1079, hy);
