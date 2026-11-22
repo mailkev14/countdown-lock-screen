@@ -132,7 +132,12 @@ const milestonesContainer = document.getElementById("milestonesContainer");
 // ==========================================
 window.addEventListener("DOMContentLoaded", () => {
   setupUI();
-  setEdition("horizon");
+
+  // Support direct URL routing via ?edition=chronos or ?edition=horizon
+  const params = new URLSearchParams(window.location.search);
+  const requestedEdition = params.get("edition") || params.get("v");
+  setEdition(requestedEdition === "chronos" ? "chronos" : "horizon");
+
   startLiveClock();
   renderWallpaper();
 });

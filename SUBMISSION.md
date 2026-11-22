@@ -17,7 +17,7 @@ HORIZON: Reverse-Engineered Countdown Lock Screen & Milestone Engine
 ```
 
 ### b. Project Cover Image
-* **File:** [`assets/cover_horizon.svg`](./assets/cover_horizon.svg) *(or `assets/cover_showcase.svg`)*
+* **File:** [`assets/cover_horizon.svg`](file:///Users/kevin-ttc/Documents/D/Andela/Google%20November%20Challenge/countdown-lock-screen/assets/cover_horizon.svg) *(or `assets/cover_showcase.svg`)*
 * *Cover Description:* A high-resolution 1600×900 showcase of the phone lock screen with live clock safe-zones, dynamic island, circular pacing ring, and companion desktop screen.
 
 ### c. Project Description
@@ -91,7 +91,7 @@ Every phone unlock reinforces the active milestone. Includes a one-click .ics ca
 
 ### d. Project Link / URL
 ```text
-https://mailkev14.github.io/countdown-lock-screen/
+https://mailkev14.github.io/countdown-lock-screen/?edition=chronos
 ```
 
 ---
